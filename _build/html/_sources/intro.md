@@ -30,7 +30,7 @@ En la medida de lo posible, nos ajustaremos a la siguiente temporización.
 ## Calificación
 La calificación de la asignatura se desglosa en 3 elementos: 
 - **Examen Final de Teoría: $50\%$**. Examen escrito con problemas y preguntas teóricas, de acuerdo con lo visto en clase. 
-- **Pruebas/Test en clase: $10\%$**. Como hemos visto en la planificación hay 3 tests con puntuaciones: 3 puntos, 3 puntos y 4 puntos. Cada uno versa sobre su bloque correspondiente. 
+- **Pruebas/Test en clase: $10\%$**. Como hemos visto en la planificación hay 2 tests con puntuaciones: 5 puntos y 5 puntos. Cada uno versa sobre su bloque correspondiente. 
 - **Prácticas: $40\%$**. Tenemos 4 prácticas que cuentan todas igual y se entegrarán en los plazos correspondientes via Moodle. 
 
 ## Para aprobar
