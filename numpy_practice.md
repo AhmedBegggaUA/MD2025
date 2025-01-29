@@ -911,6 +911,9 @@ print(eigenvectors)
 ```
 
 ## Exercises
+```{warning}
+There is code with errors in the previous examples. You have to correct the code and run it to check if the output is correct. **Part of the mark will be based on the correct execution of the code.And please, report the places that you visited to solve the bug.**
+```
 ```{note}
 You have to submit your answers via UAcloud using the corresponding assignment. The file must be a surname_name.zip file containing three .ipynb file with your answers. The name of the file must be `numpy_exercises_1.ipynb`, `numpy_exercises_2.ipynb` and `numpy_exercises_3.ipynb`. Finally, in each notebook you have to include your name and surname.
 ```
