@@ -1006,7 +1006,6 @@ d) Calculate the normalized Laplacian matrix of the graph.
 ``` {note}
 Make sure that the values are **correct** and do not contain any infinity or NaN values due to the square root of a negative number.
 ```
-
 e) Create a function that given an adjacency matrix and value, returns the number of nodes that have same or more degree than the value. The function must receive as input the adjacency matrix and the value. The function must return a numpy array with the number of nodes that have same or more degree than the value.
 ```{python}
 def nodes_degree(adjacency_matrix, value):

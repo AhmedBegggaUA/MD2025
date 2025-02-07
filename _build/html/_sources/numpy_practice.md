@@ -1007,19 +1007,7 @@ d) Calculate the normalized Laplacian matrix of the graph.
 Make sure that the values are **correct** and do not contain any infinity or NaN values due to the square root of a negative number.
 ```
 
-
-e) Create a function that returns the number of nodes that you have to visit in order to arrive to the node destiny. The function must receive as input the adjacency matrix, the node origin and the node destiny. The function must return a numpy array with the number of nodes that you have to visit in order to arrive to the node destiny from the node origin. If you can't arrive to the node destiny from the node origin, the function must return a numpy array with the value -1.
-```{python}
-def number_of_nodes_to_visit(adjacency_matrix, origin, destiny):
-    # Your code here
-    return number_of_nodes
-print(number_of_nodes_to_visit(adjacency_matrix, origin, destiny))
-# if you can't arrive to the node destiny from the node origin, the function must return a numpy array with the value -1
-# else the function must return a numpy array with the number of nodes that you have to visit in order to arrive to the node destiny from the node origin, including the node origin and the node destiny
-```
-
-
-f) Create a function that given an adjacency matrix and value, returns the number of nodes that have same or more degree than the value. The function must receive as input the adjacency matrix and the value. The function must return a numpy array with the number of nodes that have same or more degree than the value.
+e) Create a function that given an adjacency matrix and value, returns the number of nodes that have same or more degree than the value. The function must receive as input the adjacency matrix and the value. The function must return a numpy array with the number of nodes that have same or more degree than the value.
 ```{python}
 def nodes_degree(adjacency_matrix, value):
     # Your code here
