@@ -815,5 +815,5 @@ After reading the previous section, you should be able to create your first Jupy
 But this time it would be different, since you will have to create your own data. Your dataframe must have at least 6 columns and 12 rows. You can use any data you want, but we recommend you to use data that you are familiar with. For example, you can use data from your work, your studies, your hobbies, etc. After you create your dataframe, you will have to recreate all the examples from the previous section using your dataframe and write a report about it. 
 
 ```{Note}
-Your dataframe must have at least 6 columns and 12 rows. And it is very important to include a column named "Conections" in your dataframe, that will symbolize the connections between the rows.
+Your dataframe must have at least 6 columns and 12 rows. And it is very important to include a column named "Conections" in your dataframe, that will symbolize the connections between the rows. So, you will end up with a dataframe that has at least 6 columns and 12 rows, and one of the columns must be named "Connections" 6+1.
 ```
