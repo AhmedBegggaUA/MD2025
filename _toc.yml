@@ -20,3 +20,4 @@ parts:
 - caption: Practice 2
   chapters:
   - file: pandas
+  - file: plot
