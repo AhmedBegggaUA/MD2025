@@ -561,7 +561,7 @@ In this section, we have learned how to use Matplotlib to create plots. We have 
 
 ## Exercises
 
-This time is different. We will not ask you to summarize the content of this section. Instead, we will ask you to create a Jupyter Notebook and create 4 **different** plots of your choice using Matplotlib and Seaborn. The data that you will use to create the plots is the dataframe that you have already created in the previous section.
+This time is different. We will **be ask you to summarize the content of this section**. We will ask you also to create a Jupyter Notebook and create 4 **different** plots of your choice using Matplotlib and Seaborn. The data that you will use to create the plots is the dataframe that you have already created in the previous section.
 
 ```{admonition} Hint
 :class: tip
