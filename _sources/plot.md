@@ -31,8 +31,10 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 ```
 
+ 
+ 
+##  Creating a Plot
 
-## Creating a Plot
 
 
 In this section we will see how to create a simple plot using Matplotlib. We will create a simple line plot using the `plot` function. The `plot` function takes two arguments, the x-axis and the y-axis. The x-axis is the independent variable and the y-axis is the dependent variable. The `plot` function will plot the y-axis against the x-axis.
@@ -168,9 +170,10 @@ Output of the histogram
 
 This kind of plot is useful to visualize the distribution of the data.
 
+ 
 
 
-##   Customizing the Plot
+##     Customizing the Plot
 
 
 
@@ -561,7 +564,7 @@ In this section, we have learned how to use Matplotlib to create plots. We have 
 
 ## Exercises
 
-This time is different. We will not ask you to summarize the content of this section. Instead, we will ask you to create a Jupyter Notebook and create 4 **different** plots of your choice using Matplotlib and Seaborn. The data that you will use to create the plots is the dataframe that you have already created in the previous section.
+This time is different. We will **be ask you to summarize the content of this section**. We will ask you also to create a Jupyter Notebook and create 4 **different** plots of your choice using Matplotlib and Seaborn. The data that you will use to create the plots is the dataframe that you have already created in the previous section.
 
 ```{admonition} Hint
 :class: tip

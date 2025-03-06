@@ -954,6 +954,7 @@ def array_calculator(array1: np.ndarray, array2: np.ndarray, operation: str) -> 
     - Valid operations between compatible arrays
     - Error handling for incompatible array dimensions
     - Error handling for unsupported operations
+    - Never use input(), since it was used last year
     Example:
     ```{code-block} python
     # Example arrays
