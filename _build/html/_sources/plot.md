@@ -32,7 +32,7 @@ import matplotlib.pyplot as plt
 ```
 
  
- 
+
 ##  Creating a Plot
 
 
@@ -92,7 +92,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 np.random.seed(42)
 # This part is necessary to create the 3D plot
-plt.figure(figsize=(10, 5)) # Create a figure with a size of 10x5, width x height
+fig = plt.figure(figsize=(10, 5)) # Create a figure with a size of 10x5, width x height
 ax = fig.add_subplot(111, projection='3d') # Create a 3D axis, 111 means 1x1 grid, first subplot, projection='3d' means 3D plot
 
 x = np.random.standard_normal(100) # Create random data
