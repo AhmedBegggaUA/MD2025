@@ -170,7 +170,7 @@ This kind of plot is useful to visualize the distribution of the data.
 
 
 
-##   Customizing the Plot
+## Customizing the Plot
 
 
 
@@ -407,7 +407,7 @@ To use Seaborn, you need to import it. You can import it using the following com
 import seaborn as sns
 ```
 
-### Creating a Plot
+###  Creating a Plot
 
 In this section we will see how to create a simple plot using Seaborn. We will create a simple line plot using the `lineplot` function. The `lineplot` function takes two arguments, the x-axis and the y-axis. The x-axis is the independent variable and the y-axis is the dependent variable. The `lineplot` function will plot the y-axis against the x-axis.
 
