@@ -173,8 +173,8 @@ G.add_nodes_from([0,1, 2, 3, 4, 5]) # This adds nodes with the labels 1, 2, 3, 4
 G.add_edges_from([(0, 2), (1, 2), (2, 3), (3, 4),(3,5)]) # This adds edges between the nodes 1 and 2, 2 and 3, 3 and 4, and 4 and 5
 print(G.nodes) # This gives as a output: [0, 1, 2, 3, 4, 5]
 print(G.edges) # This gives as a output: [(0, 2), (1, 2), (2, 3), (3, 4), (3, 5)]
-print(G.nodes[0]) # This gives as a output: {}
-print(G.edges[0, 2]) # This gives as a output: {}
+print(list(G.nodes)[2]) # This gives as a output: 2
+print(list(G.edges)[-1]) # This gives as a output: (3, 5)
 ```
 
 ###  Accessing the attributes of the nodes and edges
@@ -449,6 +449,7 @@ data = np.array([
 ],dtype=object)
 
 # Create a DataFrame from the NumPy array
+df = pd.DataFrame(data, columns=['id','name','age','city','friends'])
 ```
 
 ## Submission
