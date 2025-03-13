@@ -26,3 +26,7 @@ parts:
   - file: pandas
   - file: plot
   - file: networkx
+- caption: Exam Solutions 
+  chapters:
+  - file: ExamJune24
+  - file: ExamJuly24
