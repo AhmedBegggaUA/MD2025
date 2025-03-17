@@ -256,10 +256,22 @@ To access the degree matrix of the graph, you can use the following command:
 
 ```python
 import networkx as nx
-G = nx.Graph() # This sentence creates an empty directed graph
-G.add_nodes_from([0,1, 2, 3, 4, 5]) # This adds nodes with the labels 1, 2, 3, 4, and 5
-G.add_edges_from([(0, 2), (1, 2), (2, 3), (3, 4),(3,5)]) # This adds edges between the nodes 1 and 2, 2 and 3, 3 and 4, and 4 and 5
-print(nx.degree_matrix(G).todense()) # This gives as a output: [[1 0 0 0 0 0]
+import numpy as np
+g = nx.Graph()
+g.add_nodes_from([1,2,3,4,5,6])
+g.add_edges_from([(1,2),(4,5),(2,6),(2,4),(1,3),(3,5)])
+
+# Obtener los grados de cada nodo
+degrees = dict(g.degree())
+
+n = len(g.nodes())
+degree_matrix = np.zeros((n, n))
+
+# Rellenar la diagonal con los grados de cada nodo
+for i, node in enumerate(sorted(g.nodes())): # El enumerate que vimos en clase.
+    degree_matrix[i, i] = degrees[node]
+
+print(degree_matrix) # This gives as a output: [[1 0 0 0 0 0]
                                       #                         [0 1 0 0 0 0]
                                       #                         [0 0 3 0 0 0]
                                       #                         [0 0 0 3 0 0]
