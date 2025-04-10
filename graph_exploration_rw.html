@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>12. Graph Exploration BFS &#8212; Matemáticas Discreta IA</title>
+    <title>14. Graph Exploration Random Walks &#8212; Matemáticas Discreta IA</title>
   
   
   
@@ -93,11 +93,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'graph_exploration_bfs';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'graph_exploration_rw';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="13. Graph Exploration DFS" href="graph_exploration_dfs.html" />
-    <link rel="prev" title="11. Graph Generation" href="graph_generation.html" />
+    <link rel="next" title="15. Assignment 06/24" href="ExamJune24.html" />
+    <link rel="prev" title="13. Graph Exploration DFS" href="graph_exploration_dfs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -235,9 +235,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice 3</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="graph_generation.html">11. Graph Generation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Graph Exploration BFS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph_exploration_bfs.html">12. Graph Exploration BFS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph_exploration_dfs.html">13. Graph Exploration DFS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="graph_exploration_rw.html">14. Graph Exploration Random Walks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Graph Exploration Random Walks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exam Solutions</span></p>
 <ul class="nav bd-sidenav">
@@ -297,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/graph_exploration_bfs.md" target="_blank"
+      <li><a href="_sources/graph_exploration_rw.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -381,7 +381,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Graph Exploration BFS</h1>
+    <h1>Graph Exploration Random Walks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,18 +391,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">12.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-bfs-work">12.2. How Does BFS Work?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-with-numpy">12.3. Implementation with NumPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-example">12.4. Visual Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-our-bfs-algorithm">12.5. Testing Our BFS Algorithm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-bfs-process">12.6. Visualizing the BFS Process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">12.7. Conclusion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">12.8. Exercise</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">12.8.1. Exercise 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">12.8.2. Exercise 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">14.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-random-walks-work">14.2. How Do Random Walks Work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-with-numpy">14.3. Implementation with NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-example">14.4. Visual Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-our-random-walk-algorithm">14.5. Testing Our Random Walk Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-random-walk-process">14.6. Visualizing the Random Walk Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications-of-random-walks">14.7. Practical Applications of Random Walks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">14.8. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">14.9. Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">14.9.1. Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">14.9.2. Exercise 2</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">14.10. Submission</a></li>
 </ul>
             </nav>
         </div>
@@ -414,49 +416,53 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="graph-exploration-bfs">
-<h1><span class="section-number">12. </span>Graph Exploration BFS<a class="headerlink" href="#graph-exploration-bfs" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="graph-exploration-random-walks">
+<h1><span class="section-number">14. </span>Graph Exploration Random Walks<a class="headerlink" href="#graph-exploration-random-walks" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
-<h2><span class="section-number">12.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p>When working with unweighted graphs, Breadth-First Search (BFS) is the optimal algorithm for finding the shortest path between nodes. In this notebook, we’ll implement BFS using NumPy and NetworkX to find the shortest path in an unweighted, undirected graph.</p>
+<h2><span class="section-number">14.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>When working with graphs, Random Walks provide an alternative exploration strategy that mimics random movement through a network. In this notebook, we’ll implement Random Walks using NumPy and NetworkX to explore an unweighted, undirected graph and potentially find a path between nodes.</p>
 </section>
-<section id="how-does-bfs-work">
-<h2><span class="section-number">12.2. </span>How Does BFS Work?<a class="headerlink" href="#how-does-bfs-work" title="Permalink to this heading">#</a></h2>
-<p>BFS explores a graph level by level, starting from a source node:</p>
+<section id="how-do-random-walks-work">
+<h2><span class="section-number">14.2. </span>How Do Random Walks Work?<a class="headerlink" href="#how-do-random-walks-work" title="Permalink to this heading">#</a></h2>
+<p>Random Walks explore a graph by moving randomly from node to node:</p>
 <ol class="arabic simple">
 <li><p>We start at the source node and mark it as visited</p></li>
-<li><p>We explore all its immediate neighbors</p></li>
-<li><p>Then we move to the next level of nodes (neighbors of neighbors)</p></li>
-<li><p>This process continues until we reach the target node or visit all reachable nodes</p></li>
+<li><p>At each step, we randomly select one of the current node’s neighbors</p></li>
+<li><p>We move to that neighbor and add it to our path</p></li>
+<li><p>This process continues until we reach the target node or exceed a maximum number of steps</p></li>
 </ol>
-<p>Since BFS explores nodes in order of their distance from the source, it naturally finds the shortest path in unweighted graphs.</p>
+<p>Unlike BFS and DFS, Random Walks don’t guarantee finding the shortest path or even any path at all, but they are useful for sampling graph properties, simulating stochastic processes, and can be effective in very large graphs where systematic exploration is impractical.</p>
 </section>
 <section id="implementation-with-numpy">
-<h2><span class="section-number">12.3. </span>Implementation with NumPy<a class="headerlink" href="#implementation-with-numpy" title="Permalink to this heading">#</a></h2>
-<p>Remember, it is forbidden to use any built-in functions or libraries that implement BFS. You need to implement the algorithm from scratch using NumPy and standard Python lists. Queues or stacks are not necessary for this implementation, as we can use NumPy arrays to store the visited nodes and track the exploration process. Any implementation that uses built-in BFS functions or Queue or Stack data structures will be considered invalid.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<h2><span class="section-number">14.3. </span>Implementation with NumPy<a class="headerlink" href="#implementation-with-numpy" title="Permalink to this heading">#</a></h2>
+<p>Remember, it is forbidden to use any built-in functions or libraries that implement Random Walks. You need to implement the algorithm from scratch using NumPy and standard Python lists. Any implementation that uses built-in Random Walk functions will be considered invalid.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="k">def</span> <span class="nf">bfs_numpy</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">random_walk_numpy</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">max_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Implementation of BFS using NumPy and standard Python lists</span>
+<span class="sd">    Implementation of Random Walk using NumPy and standard Python lists</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters:</span>
 <span class="sd">    - graph: NetworkX graph (undirected, unweighted)</span>
 <span class="sd">    - source: Source node</span>
 <span class="sd">    - target: Target node</span>
+<span class="sd">    - max_steps: Maximum number of steps before giving up</span>
+<span class="sd">    - seed: Random seed for reproducibility</span>
 <span class="sd">    </span>
 <span class="sd">    Returns:</span>
 <span class="sd">    - steps: Number of steps needed to find the solution</span>
-<span class="sd">    - shortest_path: List of nodes in the shortest path from source to target</span>
+<span class="sd">    - path: List of nodes in the path from source to target</span>
+<span class="sd">    - success: Boolean indicating whether the target was found</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    
-    <span class="k">return</span> <span class="n">steps</span><span class="p">,</span> <span class="n">shortest_path</span>
+    <span class="k">return</span> <span class="n">steps</span><span class="p">,</span> <span class="n">node_path</span><span class="p">,</span> <span class="n">success</span>
 </pre></div>
 </div>
 </section>
 <section id="visual-example">
-<h2><span class="section-number">12.4. </span>Visual Example<a class="headerlink" href="#visual-example" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">14.4. </span>Visual Example<a class="headerlink" href="#visual-example" title="Permalink to this heading">#</a></h2>
 <p>Let’s create a simple undirected graph to visualize how the algorithm works:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_example_graph</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates an example undirected graph for testing&quot;&quot;&quot;</span>
@@ -496,81 +502,83 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="testing-our-bfs-algorithm">
-<h2><span class="section-number">12.5. </span>Testing Our BFS Algorithm<a class="headerlink" href="#testing-our-bfs-algorithm" title="Permalink to this heading">#</a></h2>
+<section id="testing-our-random-walk-algorithm">
+<h2><span class="section-number">14.5. </span>Testing Our Random Walk Algorithm<a class="headerlink" href="#testing-our-random-walk-algorithm" title="Permalink to this heading">#</a></h2>
 <p>Let’s run our algorithm on this graph and see the results:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define source and target nodes</span>
 <span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;Bilbao&#39;</span>
 <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;Sevilla&#39;</span>
 
-<span class="c1"># Run BFS</span>
-<span class="n">bfs_steps</span><span class="p">,</span> <span class="n">bfs_visited</span> <span class="o">=</span> <span class="n">bfs_numpy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;BFS Path from </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of steps: </span><span class="si">{</span><span class="n">bfs_steps</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Visited nodes: </span><span class="si">{</span><span class="n">bfs_visited</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of nodes visited: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">bfs_visited</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Run Random Walk</span>
+<span class="n">rw_steps</span><span class="p">,</span> <span class="n">rw_path</span><span class="p">,</span> <span class="n">success</span> <span class="o">=</span> <span class="n">random_walk_numpy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">max_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
-<span class="c1"># Compare with NetworkX</span>
-<span class="n">path</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">NetworkX result:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shortest path: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Path length: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> edges&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Random Walk from </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of steps: </span><span class="si">{</span><span class="n">rw_steps</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Path found: </span><span class="si">{</span><span class="n">rw_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Path length: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">rw_path</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> edges&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Random Walk failed to find </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2"> within </span><span class="si">{</span><span class="n">rw_steps</span><span class="si">}</span><span class="s2"> steps.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Partial path: </span><span class="si">{</span><span class="n">rw_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Compare with NetworkX (shortest path)</span>
+<span class="n">shortest_path</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">NetworkX result (shortest path):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shortest path: </span><span class="si">{</span><span class="n">shortest_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Path length: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">shortest_path</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> edges&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check if Random Walk found the shortest path (unlikely)</span>
+<span class="k">if</span> <span class="n">success</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">rw_path</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">shortest_path</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Random Walk found the shortest path by chance!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">success</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Random Walk found a valid path, but not the shortest one. Difference: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">rw_path</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">shortest_path</span><span class="p">)</span><span class="si">}</span><span class="s2"> edges&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-<section id="visualizing-the-bfs-process">
-<h2><span class="section-number">12.6. </span>Visualizing the BFS Process<a class="headerlink" href="#visualizing-the-bfs-process" title="Permalink to this heading">#</a></h2>
-<p>Let’s visualize the order in which BFS visits the nodes:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualize_shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">shortest_path</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Visualizes the shortest path with numbered edges using edge labels&quot;&quot;&quot;</span>
+<section id="visualizing-the-random-walk-process">
+<h2><span class="section-number">14.6. </span>Visualizing the Random Walk Process<a class="headerlink" href="#visualizing-the-random-walk-process" title="Permalink to this heading">#</a></h2>
+<p>Let’s visualize the path that the Random Walk finds:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualize_random_walk_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Visualizes the random walk path with arrows indicating direction&quot;&quot;&quot;</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
     
     <span class="c1"># Create a copy of the graph for visualization</span>
     <span class="n">H</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
     
-    <span class="c1"># Create the edges of the shortest path</span>
-    <span class="n">edge_colors</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">edge_widths</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="c1"># Create edge labels dictionary for the shortest path edges</span>
-    <span class="n">edge_labels</span> <span class="o">=</span> <span class="p">{}</span>
-    
-    <span class="c1"># Process all edges and mark the shortest path edges</span>
-    <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">H</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">shortest_path</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="c1"># Check if this edge is part of the shortest path</span>
-            <span class="n">is_path_edge</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">shortest_path</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="o">==</span> <span class="n">shortest_path</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">and</span> <span class="n">v</span> <span class="o">==</span> <span class="n">shortest_path</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="ow">or</span> \
-                   <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">shortest_path</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">and</span> <span class="n">u</span> <span class="o">==</span> <span class="n">shortest_path</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]):</span>  <span class="c1"># For undirected graphs</span>
-                    <span class="n">is_path_edge</span> <span class="o">=</span> <span class="kc">True</span>
-                    <span class="c1"># Add label with the step number</span>
-                    <span class="n">edge_labels</span><span class="p">[(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-                    <span class="k">break</span>
-            
-            <span class="k">if</span> <span class="n">is_path_edge</span><span class="p">:</span>
-                <span class="n">edge_colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-                <span class="n">edge_widths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">edge_colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-                <span class="n">edge_widths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">edge_colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-            <span class="n">edge_widths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="c1"># Create directed edges for the path to show the walk direction</span>
+    <span class="n">path_edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
     
     <span class="c1"># Draw all nodes</span>
     <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
     
-    <span class="c1"># Highlight the nodes in the shortest path</span>
-    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">shortest_path</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;#ff9999&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+    <span class="c1"># Highlight the nodes in the path</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;#ff9999&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
     
-    <span class="c1"># Draw all edges with appropriate colors and widths</span>
-    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="n">edge_colors</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">edge_widths</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="c1"># Draw all edges in gray</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
     
-    <span class="c1"># Draw edge labels (numbers) for the shortest path</span>
-    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edge_labels</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_labels</span><span class="o">=</span><span class="n">edge_labels</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> 
-                                <span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">))</span>
+    <span class="c1"># Draw the random walk path with arrows</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span>
+        <span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> 
+        <span class="n">edgelist</span><span class="o">=</span><span class="n">path_edges</span><span class="p">,</span> 
+        <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> 
+        <span class="n">width</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> 
+        <span class="n">arrows</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Show arrows for direction</span>
+        <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-|&gt;&#39;</span><span class="p">,</span>  <span class="c1"># Arrow style</span>
+        <span class="n">arrowsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+        <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">&#39;arc3,rad=0.1&#39;</span>  <span class="c1"># Curved edges to show direction better</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Add numbers to show the order of steps</span>
+    <span class="n">edge_labels</span> <span class="o">=</span> <span class="p">{</span><span class="n">path_edges</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path_edges</span><span class="p">))}</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edge_labels</span><span class="p">(</span>
+        <span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> 
+        <span class="n">edge_labels</span><span class="o">=</span><span class="n">edge_labels</span><span class="p">,</span> 
+        <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> 
+        <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="p">)</span>
     
     <span class="c1"># Draw node labels</span>
     <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
@@ -579,25 +587,55 @@ document.write(`
     <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="c1"># Visualize the shortest path with numbered edges</span>
-<span class="n">visualize_shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Shortest Path with Numbered Edges&quot;</span><span class="p">)</span>
+<span class="c1"># Visualize the Random Walk path with arrows</span>
+<span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+    <span class="n">visualize_random_walk_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">rw_path</span><span class="p">,</span> <span class="s2">&quot;Random Walk Path with Step Numbers&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
+<section id="practical-applications-of-random-walks">
+<h2><span class="section-number">14.7. </span>Practical Applications of Random Walks<a class="headerlink" href="#practical-applications-of-random-walks" title="Permalink to this heading">#</a></h2>
+<p>Random Walks have many practical applications in various fields:</p>
+<ol class="arabic simple">
+<li><p><strong>PageRank Algorithm</strong>: Google’s original algorithm uses random walks to rank web pages based on the probability of a random surfer visiting them.</p></li>
+<li><p><strong>Recommendation Systems</strong>: Random walks on user-item graphs can be used to generate personalized recommendations.</p></li>
+<li><p><strong>Network Sampling</strong>: Random walks provide a way to sample nodes from large networks when complete exploration is impractical.</p></li>
+<li><p><strong>Community Detection</strong>: Random walk-based metrics can identify densely connected communities in networks.</p></li>
+</ol>
+</section>
 <section id="conclusion">
-<h2><span class="section-number">12.7. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
-<p>In this notebook, we have explored the Breadth-First Search algorithm implemented using NumPy and NetworkX. BFS is a fundamental graph traversal method that systematically explores all vertices of a graph by visiting neighbors at each level before moving to the next level. This level-by-level approach naturally leads to finding the shortest path in unweighted graphs, making BFS an optimal choice for such scenarios. Our implementation leverages NumPy’s efficient array operations and NetworkX’s graph representation capabilities, demonstrating how these tools can be combined to solve graph-related problems effectively. The visualization of the visit order provides an intuitive understanding of how BFS works and why it guarantees the shortest path in unweighted graphs. This algorithm forms the foundation for many more complex graph algorithms and is essential in network analysis, web crawling, social network analysis, and many other applications where finding the most direct connection between nodes is crucial.</p>
+<h2><span class="section-number">14.8. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<p>In this notebook, we have explored the Random Walk algorithm implemented using NumPy and NetworkX. Random Walks provide a stochastic approach to graph traversal that differs fundamentally from deterministic methods like BFS and DFS. While random walks do not guarantee finding the shortest path or even any path at all, they have several advantages:</p>
+<ol class="arabic simple">
+<li><p>They require minimal memory as they only need to track the current position and path</p></li>
+<li><p>They can be effective for exploring very large graphs where systematic traversal is impractical</p></li>
+<li><p>They model many natural and social processes that involve random movement</p></li>
+<li><p>They form the basis for many important algorithms in recommendation systems, web ranking, and network analysis</p></li>
+</ol>
+<p>Our implementation demonstrates how random walks behave in graphs and highlights the trade-off between deterministic exploration and stochastic sampling. The visualization of the walk paths provides an intuitive understanding of how randomness affects exploration patterns. This algorithm is essential in many applications, including PageRank, recommendation systems, and Markov Chain Monte Carlo methods.</p>
 </section>
 <section id="exercise">
-<h2><span class="section-number">12.8. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">14.9. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
 <section id="exercise-1">
-<h3><span class="section-number">12.8.1. </span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
-<p>After we implemented the BFS algorithm using NumPy, now it’s time to understand the algorithm. What we want you to do is to explain the algorithm in your own words, and try to execute each step of the algorithm, showing print statements for each step. This will help you understand the algorithm better and see how it works in practice.</p>
+<h3><span class="section-number">14.9.1. </span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
+<p>After implementing the Random Walk algorithm using NumPy, now it’s time to understand the algorithm. What we want you to do is to explain the algorithm in your own words, and try to execute each step of the algorithm, showing print statements for each step. This will help you understand the algorithm better and see how it works in practice.</p>
 </section>
 <section id="exercise-2">
-<h3><span class="section-number">12.8.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
-<p>Apply the BFS algorithm to the synthetic graphs that you generated in the previous notebook, and discuss the results. How does the algorithm perform on these graphs? Why it takes more steps to find the shortest path in some cases?</p>
+<h3><span class="section-number">14.9.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
+<p>Apply the Random Walk algorithm to the synthetic graphs that you generated in the previous notebook, and discuss the results. How does the algorithm perform on these graphs? In what cases might Random Walks be more appropriate than BFS or DFS? Pay attention to the differences in path lengths and the nature of the paths found by each algorithm.</p>
 </section>
+</section>
+<section id="submission">
+<h2><span class="section-number">14.10. </span>Submission<a class="headerlink" href="#submission" title="Permalink to this heading">#</a></h2>
+<p>For the delivery of the practice 3, what you will be asked to do is to make a zip (name_name.zip) containing 4 notebooks: a first notebook containing the generation section, a second notebook containing BFS, a third notebook containing the DFS algorithm and a fourth notebook containing the Random Walk algorithm.</p>
+<p>At the end the zip should be like this when you unzip it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>name_surname.zip
+├──<span class="w"> </span>graph_exploration_bfs.ipynb
+├──<span class="w"> </span>graph_exploration_dfs.ipynb
+├──<span class="w"> </span>graph_exploration_rw.ipynb
+└──<span class="w"> </span>graph_exploration_generation.ipynb
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -632,20 +670,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="graph_generation.html"
+       href="graph_exploration_dfs.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Graph Generation</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Graph Exploration DFS</p>
       </div>
     </a>
     <a class="right-next"
-       href="graph_exploration_dfs.html"
+       href="ExamJune24.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Graph Exploration DFS</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Assignment 06/24</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -665,18 +703,20 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">12.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-bfs-work">12.2. How Does BFS Work?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-with-numpy">12.3. Implementation with NumPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-example">12.4. Visual Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-our-bfs-algorithm">12.5. Testing Our BFS Algorithm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-bfs-process">12.6. Visualizing the BFS Process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">12.7. Conclusion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">12.8. Exercise</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">12.8.1. Exercise 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">12.8.2. Exercise 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">14.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-random-walks-work">14.2. How Do Random Walks Work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-with-numpy">14.3. Implementation with NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-example">14.4. Visual Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-our-random-walk-algorithm">14.5. Testing Our Random Walk Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-random-walk-process">14.6. Visualizing the Random Walk Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications-of-random-walks">14.7. Practical Applications of Random Walks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">14.8. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">14.9. Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">14.9.1. Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">14.9.2. Exercise 2</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">14.10. Submission</a></li>
 </ul>
   </nav></div>
 
