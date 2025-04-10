@@ -210,3 +210,17 @@ After implementing the Random Walk algorithm using NumPy, now it's time to under
 ### Exercise 2
 
 Apply the Random Walk algorithm to the synthetic graphs that you generated in the previous notebook, and discuss the results. How does the algorithm perform on these graphs? In what cases might Random Walks be more appropriate than BFS or DFS? Pay attention to the differences in path lengths and the nature of the paths found by each algorithm.
+
+## Submission
+
+For the delivery of the practice 3, what you will be asked to do is to make a zip (name_name.zip) containing 4 notebooks: a first notebook containing the generation section, a second notebook containing BFS, a third notebook containing the DFS algorithm and a fourth notebook containing the Random Walk algorithm.
+
+At the end the zip should be like this when you unzip it:
+```bash
+name_surname.zip
+├── graph_exploration_bfs.ipynb
+├── graph_exploration_dfs.ipynb
+├── graph_exploration_rw.ipynb
+└── graph_exploration_generation.ipynb
+
+```
