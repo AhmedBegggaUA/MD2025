@@ -1,188 +1,114 @@
-# Graph Exploration
+# Graph exploration
 
-## Introduction
-
-When working with unweighted graphs, Breadth-First Search (BFS) is the optimal algorithm for finding the shortest path between nodes. In this notebook, we'll implement BFS using NumPy and NetworkX to find the shortest path in an unweighted, undirected graph.
+In this section we will explore in more depth the graphs that we previously had generated. So, before we dive in this exploration, let's make a recap of what we have already seen in previous classes.
 
 
-## How Does BFS Work?
-
-BFS explores a graph level by level, starting from a source node:
-1. We start at the source node and mark it as visited
-2. We explore all its immediate neighbors
-3. Then we move to the next level of nodes (neighbors of neighbors)
-4. This process continues until we reach the target node or visit all reachable nodes
-
-Since BFS explores nodes in order of their distance from the source, it naturally finds the shortest path in unweighted graphs.
-
-## Implementation with NumPy
-
-Remember, it is forbidden to use any built-in functions or libraries that implement BFS. You need to implement the algorithm from scratch using NumPy and standard Python lists. Queues or stacks are not necessary for this implementation, as we can use NumPy arrays to store the visited nodes and track the exploration process. Any implementation that uses built-in BFS functions or Queue or Stack data structures will be considered invalid.
-
-```python
+## Shortest path
 
 
-def bfs_numpy(graph, source, target):
-    """
-    Implementation of BFS using NumPy and standard Python lists
-    
-    Parameters:
-    - graph: NetworkX graph (undirected, unweighted)
-    - source: Source node
-    - target: Target node
-    
-    Returns:
-    - steps: Number of steps needed to find the solution
-    - shortest_path: List of nodes in the shortest path from source to target
-    """
-    
-    
-    return steps, shortest_path
+In the previous classes, we have seen how to find the shortest path between two nodes in a graph. We have seen that there are several algorithms to do this, such as Dijkstra's algorithm. However there are others algorithms in the literature that can be used to find the shortest path between two nodes in a graph. For example, the A* algorithm is another algorithm that can be used to find the shortest path between two nodes in a graph. The A* algorithm is a heuristic search algorithm that is used to find the shortest path between two nodes in a graph. The A* algorithm is based on the idea of using a heuristic function to estimate the cost of reaching the goal from a given node. The heuristic function is used to evaluate the cost of reaching the goal from a given node. The A* algorithm uses this heuristic function to guide the search for the shortest path between two nodes in a graph.
+
+### Advantages and disadvantages of the shortest path
+
+
+
+Regarding the advantages of the shortest path, we can say that it is a very efficient algorithm that can be used to find the shortest path between two nodes in a graph. However, this algorithm does not give us too much information about the graph itself. It only gives us the shortest path between two nodes in a graph. On the other hand, the disadvantages of the shortest path are that it can be computationally expensive, especially for large graphs. So imagine that you have two graphs and you want to discriminate between them. Shortest path algorithm will not be able to help you with this task, since most of the paths will be the same or indistinguishable.
+
+##  Random walk
+
+
+
+In the previous classes, we have also seen how to perform a random walk on a graph. A random walk is a stochastic process that describes a path that consists of a sequence of random steps on a graph. The random walk starts at a given node in the graph and then moves to a neighboring node with a certain probability. The random walk continues in this way until it reaches a terminal node. The random walk can be used to explore the graph and to find interesting patterns in the graph.
+
+
+###  Advantages and disadvantages of the random walk
+
+
+
+Regarding the advantages of the random walk, we can say that it is a very efficient algorithm that can be used to explore the graph and to find interesting patterns in the graph. The random walk can be used to find clusters of nodes in the graph, to find communities in the graph, and to find other interesting patterns in the graph. However, the disadvantages of the random walk are that it can be computationally expensive, especially for large graphs. So imagine that you have a large graph and you want to perform a random walk on it. This can be a very time-consuming process, since the random walk has to explore the entire graph to find interesting patterns.
+
+## Hitting time
+
+
+
+The goal of this session is to explore the graph that we have generated in the previous classes and in future classes we will learn how to create a embedding or representation of the graph. This representation will be used to perform a classification task on the graph or to perform a clustering task on the graph or even to perform a link prediction task on the graph. But before we can do that, we need to explore the graph and to understand its properties. One of the properties of the graph that we can explore is the hitting time of the graph. The hitting time of a graph is the expected number of steps that it takes for a random walk to reach a given node in the graph. The hitting time can be used to measure the connectivity of the graph and to find interesting patterns in the graph. This patterns would be more informative than the shortest path or the random walk, since it will give us a more global view of the graph and it is more robust to noise (noise in a graph is the presence of edges that do not follow the general pattern of the graph).
+
+### How to compute the hitting time?
+
+The hitting time of a graph can be computed using random walks, bare in mind that this has to be done for all the nodes in the graph. In theory classes you will learn how to compute the hitting time of a graph using the transition matrix of the graph. By now, we will use the random walk to compute the hitting time of the graph. Here is the pseudo-code to compute the hitting time of a graph using random walks:
+
+```{r, tidy=FALSE, eval=FALSE, highlight=FALSE }
+
+def random_walk(G, start_node,destination_node):
+    current_node = start_node
+    path = [current_node]
+    while current_node != destination_node:
+        neighbors = list(G.neighbors(current_node))
+        current_node = np.random.choice(neighbors)
+        path.append(current_node)
+    return path
+
+# Now we are going to create the function hitting time, that calculates the number of steps it takes to go from one node to another using random walks
+
+def hitting_time(G, start_node, destination_node, num_walks=1000):
+    hitting_times = []
+    # From node_i to node_j
+    for _ in range(num_walks):
+        path = random_walk(G, start_node, destination_node)
+        hitting_times.append(len(path))
+    # From node_j to node_i
+    for _ in range(num_walks):
+        path = random_walk(G, destination_node, start_node)
+        hitting_times.append(len(path))
+    return np.mean(hitting_times)
+        
+
 ```
+As you can see, the function `hitting_time` computes the hitting time of a graph using random walks. The function takes as input the graph `G`, the start node `start_node`, the destination node `destination_node`, and the number of walks `num_walks`. The function then computes the hitting time of the graph by performing `num_walks` random walks from the start node to the destination node and from the destination node to the start node. The function then returns the average hitting time of the graph.
 
-## Visual Example
-
-Let's create a simple undirected graph to visualize how the algorithm works:
-
-```python
-def create_example_graph():
-    """Creates an example undirected graph for testing"""
-    G = nx.Graph()
-    
-    # Add nodes (cities)
-    cities = ['Madrid', 'Barcelona', 'Valencia', 'Sevilla', 'Bilbao', 'Zaragoza']
-    G.add_nodes_from(cities)
-    
-    # Add edges (no weights)
-    edges = [
-        ('Madrid', 'Barcelona'),
-        ('Madrid', 'Valencia'),
-        ('Madrid', 'Sevilla'),
-        ('Madrid', 'Bilbao'),
-        ('Madrid', 'Zaragoza'),
-        ('Barcelona', 'Valencia'),
-        ('Barcelona', 'Zaragoza'),
-        ('Valencia', 'Sevilla'),
-        ('Zaragoza', 'Bilbao')
-    ]
-    
-    # Add the edges
-    G.add_edges_from(edges)
-    
-    return G
-
-# Create and visualize the graph
-G = create_example_graph()
-
-# Visualize the graph
-pos = nx.spring_layout(G, seed=42)  # Node positioning
-plt.figure(figsize=(10, 8))
-nx.draw(G, pos, with_labels=True, node_color='lightblue', node_size=500, font_size=10)
-plt.title("Undirected Graph of Spanish cities")
-plt.show()
-```
-
-## Testing Our BFS Algorithm
-
-Let's run our algorithm on this graph and see the results:
-
-```python
-# Define source and target nodes
-source = 'Bilbao'
-target = 'Sevilla'
-
-# Run BFS
-bfs_steps, bfs_visited = bfs_numpy(G, source, target)
-print(f"BFS Path from {source} to {target}:")
-print(f"Number of steps: {bfs_steps}")
-print(f"Visited nodes: {bfs_visited}")
-print(f"Number of nodes visited: {len(bfs_visited)}")
-
-# Compare with NetworkX
-path = nx.shortest_path(G, source, target)
-print(f"\nNetworkX result:")
-print(f"Shortest path: {path}")
-print(f"Path length: {len(path) - 1} edges")
-```
-
-## Visualizing the BFS Process
-
-Let's visualize the order in which BFS visits the nodes:
-
-```python
-def visualize_shortest_path(G, shortest_path, title):
-    """Visualizes the shortest path with numbered edges using edge labels"""
-    plt.figure(figsize=(10, 8))
-    
-    # Create a copy of the graph for visualization
-    H = G.copy()
-    pos = nx.spring_layout(H, seed=42)
-    
-    # Create the edges of the shortest path
-    edge_colors = []
-    edge_widths = []
-    
-    # Create edge labels dictionary for the shortest path edges
-    edge_labels = {}
-    
-    # Process all edges and mark the shortest path edges
-    for u, v in H.edges():
-        if len(shortest_path) > 1:
-            # Check if this edge is part of the shortest path
-            is_path_edge = False
-            for i in range(len(shortest_path) - 1):
-                if (u == shortest_path[i] and v == shortest_path[i+1]) or \
-                   (v == shortest_path[i] and u == shortest_path[i+1]):  # For undirected graphs
-                    is_path_edge = True
-                    # Add label with the step number
-                    edge_labels[(u, v)] = str(i + 1)
-                    break
-            
-            if is_path_edge:
-                edge_colors.append('red')
-                edge_widths.append(3.0)
-            else:
-                edge_colors.append('gray')
-                edge_widths.append(1.0)
-        else:
-            edge_colors.append('gray')
-            edge_widths.append(1.0)
-    
-    # Draw all nodes
-    nx.draw_networkx_nodes(H, pos, node_color='lightblue', node_size=500)
-    
-    # Highlight the nodes in the shortest path
-    nx.draw_networkx_nodes(H, pos, nodelist=shortest_path, node_color='#ff9999', node_size=500)
-    
-    # Draw all edges with appropriate colors and widths
-    nx.draw_networkx_edges(H, pos, edge_color=edge_colors, width=edge_widths, alpha=0.7)
-    
-    # Draw edge labels (numbers) for the shortest path
-    nx.draw_networkx_edge_labels(H, pos, edge_labels=edge_labels, font_size=12, 
-                                font_weight='bold', bbox=dict(facecolor='white', alpha=0.7))
-    
-    # Draw node labels
-    nx.draw_networkx_labels(H, pos)
-    
-    plt.title(title)
-    plt.axis('off')
-    plt.show()
-
-# Visualize the shortest path with numbered edges
-visualize_shortest_path(G, path, "Shortest Path with Numbered Edges")
-```
-
-## Conclusion
-
-In this notebook, we have explored the Breadth-First Search algorithm implemented using NumPy and NetworkX. BFS is a fundamental graph traversal method that systematically explores all vertices of a graph by visiting neighbors at each level before moving to the next level. This level-by-level approach naturally leads to finding the shortest path in unweighted graphs, making BFS an optimal choice for such scenarios. Our implementation leverages NumPy's efficient array operations and NetworkX's graph representation capabilities, demonstrating how these tools can be combined to solve graph-related problems effectively. The visualization of the visit order provides an intuitive understanding of how BFS works and why it guarantees the shortest path in unweighted graphs. This algorithm forms the foundation for many more complex graph algorithms and is essential in network analysis, web crawling, social network analysis, and many other applications where finding the most direct connection between nodes is crucial.
-
-
-## Exercise
+## Exercises
 
 ### Exercise 1
-
-After we implemented the BFS algorithm using NumPy, now it's time to understand the algorithm. What we want you to do is to explain the algorithm in your own words, and try to execute each step of the algorithm, showing print statements for each step. This will help you understand the algorithm better and see how it works in practice.
+```{note}
+USAR SOLO UNA VEZ EL TODOS CON TODOS PARA LOS 5 GRAFOS (LOS DOS RANDOM, LOS DOS SMALL WORLD Y EL DE BARABASI ALBERT). NO LO CALCULEIS OTRA VEZ PARA EL EJERCICIO 2, SOLO UNA VEZ.
+```
+```{note}
+NO LO HAGAS SOLO PARA UN GRAFO, PARA LOS 5 GRAFOS. PODEIS USAR LAS SEMILLAS QUE OS GUSTEN MÁS.
+SI HACEÍS EL HITTING TIME SOLO PARA DOS NODOS Y NO TODOS, AUTOMÁTICAMENTE SE OS PONDRÁ UN 0 EN EL EJERCICIO.
+```
+Compute the hitting time of the graph that we have generated in the previous classes using the function `hitting_time` that we have defined above. And then, analyze the results. What can you say about the time it takes to go from one node to another in the graph? In which graph is it easier to go from one node to another? Why? And if you could improve the hitting time of the graph, how would you do it? 
 
 ### Exercise 2
+```{note}
+REUSAR EL CALCULO ANTERIOR, NO HAGAIS EL CALCULO DE NUEVO.
+```
+Compute the hitting time of the graph that we have generated in the previous classes using the function `hitting_time` that we have defined above. Then represent in an `plt.imshow` the hitting time of the graph. Don't worry, I will give you a hint on how to do this.
 
-Apply the BFS algorithm to the synthetic graphs that you generated in the previous notebook, and discuss the results. How does the algorithm perform on these graphs? Why it takes more steps to find the shortest path in some cases?
+```{figure} ./images/practices/hitting_times.png
+---
+name: stochastic_block_model
+width: 700px
+align: center
+height: 500px
+---
+hitting_times
+```
+
+### Exercise 3
+```{note}
+NO INCLUIR EL PROPIO NODO, POR EJEMPLO, SI PARA EL NODO 8 OS DAN QUE EL 8,2,3,9 SON LOS MÁS CERCANOS, NO ME DEVOLVAIS EL 8.
+```
+
+Code a program that asks you for a node and then computes the hitting time of the graph (you can use any graph you want) from that node to all the other nodes. Then, the program should return the top 3 nodes that are easier to reach from the node that you have chosen. Like a recommendation system, but for graphs.
+
+
+## Submission
+
+For the delivery of the practice 3, what you will be asked to do is to make a zip (name_name.zip) containing 2 notebooks: a first notebook containing the graph generation  section, a second notebook containing the graph representation part.
+
+At the end the zip should be like this when you unzip it:
+```bash
+name_name.zip
+├── generation.ipynb
+├── exploration.ipynb
+```

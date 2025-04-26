@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>14. Graph Exploration Random Walks &#8212; Matemáticas Discreta IA</title>
+    <title>16. Graph Exploration Random Walks &#8212; Matemáticas Discreta IA</title>
   
   
   
@@ -96,8 +96,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'graph_exploration_rw';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="15. Assignment 06/24" href="ExamJune24.html" />
-    <link rel="prev" title="13. Graph Exploration DFS" href="graph_exploration_dfs.html" />
+    <link rel="next" title="17. Assignment 06/24" href="ExamJune24.html" />
+    <link rel="prev" title="15. Graph Exploration DFS" href="graph_exploration_dfs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -221,28 +221,33 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Topic2_3.html">4. Random walks on graphs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Topic3.html">5. Paths, Flows and Cycles</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Spectral Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">6. Ranking and Partitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">7. Distances and Latent Spaces</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice 1</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="practice_intro.html">6. Introduction to the practical part of MD2025</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numpy_practice.html">7. Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice_intro.html">8. Introduction to the practical part of MD2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_practice.html">9. Numpy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice 2</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="pandas.html">8. Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plot.html">9. Matplotlib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="networkx.html">10. NetworkX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">10. Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">11. Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networkx.html">12. NetworkX</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice 3</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="graph_generation.html">11. Graph Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="graph_exploration_bfs.html">12. Graph Exploration BFS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="graph_exploration_dfs.html">13. Graph Exploration DFS</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Graph Exploration Random Walks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph_generation.html">13. Graph Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph_exploration_bfs.html">14. Graph Exploration BFS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph_exploration_dfs.html">15. Graph Exploration DFS</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. Graph Exploration Random Walks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exam Solutions</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ExamJune24.html">15. Assignment 06/24</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ExamJuly24.html">16. Assignment 07/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExamJune24.html">17. Assignment 06/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExamJuly24.html">18. Assignment 07/24</a></li>
 </ul>
 
     </div>
@@ -391,20 +396,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">14.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-random-walks-work">14.2. How Do Random Walks Work?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-with-numpy">14.3. Implementation with NumPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-example">14.4. Visual Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-our-random-walk-algorithm">14.5. Testing Our Random Walk Algorithm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-random-walk-process">14.6. Visualizing the Random Walk Process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications-of-random-walks">14.7. Practical Applications of Random Walks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">14.8. Conclusion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">14.9. Exercise</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">14.9.1. Exercise 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">14.9.2. Exercise 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">16.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-random-walks-work">16.2. How Do Random Walks Work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-with-numpy">16.3. Implementation with NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-example">16.4. Visual Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-our-random-walk-algorithm">16.5. Testing Our Random Walk Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-random-walk-process">16.6. Visualizing the Random Walk Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications-of-random-walks">16.7. Practical Applications of Random Walks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">16.8. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">16.9. Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">16.9.1. Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">16.9.2. Exercise 2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">14.10. Submission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">16.10. Submission</a></li>
 </ul>
             </nav>
         </div>
@@ -417,13 +422,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="graph-exploration-random-walks">
-<h1><span class="section-number">14. </span>Graph Exploration Random Walks<a class="headerlink" href="#graph-exploration-random-walks" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">16. </span>Graph Exploration Random Walks<a class="headerlink" href="#graph-exploration-random-walks" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
-<h2><span class="section-number">14.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>When working with graphs, Random Walks provide an alternative exploration strategy that mimics random movement through a network. In this notebook, we’ll implement Random Walks using NumPy and NetworkX to explore an unweighted, undirected graph and potentially find a path between nodes.</p>
 </section>
 <section id="how-do-random-walks-work">
-<h2><span class="section-number">14.2. </span>How Do Random Walks Work?<a class="headerlink" href="#how-do-random-walks-work" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.2. </span>How Do Random Walks Work?<a class="headerlink" href="#how-do-random-walks-work" title="Permalink to this heading">#</a></h2>
 <p>Random Walks explore a graph by moving randomly from node to node:</p>
 <ol class="arabic simple">
 <li><p>We start at the source node and mark it as visited</p></li>
@@ -434,7 +439,7 @@ document.write(`
 <p>Unlike BFS and DFS, Random Walks don’t guarantee finding the shortest path or even any path at all, but they are useful for sampling graph properties, simulating stochastic processes, and can be effective in very large graphs where systematic exploration is impractical.</p>
 </section>
 <section id="implementation-with-numpy">
-<h2><span class="section-number">14.3. </span>Implementation with NumPy<a class="headerlink" href="#implementation-with-numpy" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.3. </span>Implementation with NumPy<a class="headerlink" href="#implementation-with-numpy" title="Permalink to this heading">#</a></h2>
 <p>Remember, it is forbidden to use any built-in functions or libraries that implement Random Walks. You need to implement the algorithm from scratch using NumPy and standard Python lists. Any implementation that uses built-in Random Walk functions will be considered invalid.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
@@ -462,7 +467,7 @@ document.write(`
 </div>
 </section>
 <section id="visual-example">
-<h2><span class="section-number">14.4. </span>Visual Example<a class="headerlink" href="#visual-example" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.4. </span>Visual Example<a class="headerlink" href="#visual-example" title="Permalink to this heading">#</a></h2>
 <p>Let’s create a simple undirected graph to visualize how the algorithm works:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_example_graph</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates an example undirected graph for testing&quot;&quot;&quot;</span>
@@ -503,7 +508,7 @@ document.write(`
 </div>
 </section>
 <section id="testing-our-random-walk-algorithm">
-<h2><span class="section-number">14.5. </span>Testing Our Random Walk Algorithm<a class="headerlink" href="#testing-our-random-walk-algorithm" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.5. </span>Testing Our Random Walk Algorithm<a class="headerlink" href="#testing-our-random-walk-algorithm" title="Permalink to this heading">#</a></h2>
 <p>Let’s run our algorithm on this graph and see the results:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define source and target nodes</span>
 <span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;Bilbao&#39;</span>
@@ -536,7 +541,7 @@ document.write(`
 </div>
 </section>
 <section id="visualizing-the-random-walk-process">
-<h2><span class="section-number">14.6. </span>Visualizing the Random Walk Process<a class="headerlink" href="#visualizing-the-random-walk-process" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.6. </span>Visualizing the Random Walk Process<a class="headerlink" href="#visualizing-the-random-walk-process" title="Permalink to this heading">#</a></h2>
 <p>Let’s visualize the path that the Random Walk finds:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualize_random_walk_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Visualizes the random walk path with arrows indicating direction&quot;&quot;&quot;</span>
@@ -594,7 +599,7 @@ document.write(`
 </div>
 </section>
 <section id="practical-applications-of-random-walks">
-<h2><span class="section-number">14.7. </span>Practical Applications of Random Walks<a class="headerlink" href="#practical-applications-of-random-walks" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.7. </span>Practical Applications of Random Walks<a class="headerlink" href="#practical-applications-of-random-walks" title="Permalink to this heading">#</a></h2>
 <p>Random Walks have many practical applications in various fields:</p>
 <ol class="arabic simple">
 <li><p><strong>PageRank Algorithm</strong>: Google’s original algorithm uses random walks to rank web pages based on the probability of a random surfer visiting them.</p></li>
@@ -604,7 +609,7 @@ document.write(`
 </ol>
 </section>
 <section id="conclusion">
-<h2><span class="section-number">14.8. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.8. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
 <p>In this notebook, we have explored the Random Walk algorithm implemented using NumPy and NetworkX. Random Walks provide a stochastic approach to graph traversal that differs fundamentally from deterministic methods like BFS and DFS. While random walks do not guarantee finding the shortest path or even any path at all, they have several advantages:</p>
 <ol class="arabic simple">
 <li><p>They require minimal memory as they only need to track the current position and path</p></li>
@@ -615,18 +620,18 @@ document.write(`
 <p>Our implementation demonstrates how random walks behave in graphs and highlights the trade-off between deterministic exploration and stochastic sampling. The visualization of the walk paths provides an intuitive understanding of how randomness affects exploration patterns. This algorithm is essential in many applications, including PageRank, recommendation systems, and Markov Chain Monte Carlo methods.</p>
 </section>
 <section id="exercise">
-<h2><span class="section-number">14.9. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.9. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
 <section id="exercise-1">
-<h3><span class="section-number">14.9.1. </span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.9.1. </span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <p>After implementing the Random Walk algorithm using NumPy, now it’s time to understand the algorithm. What we want you to do is to explain the algorithm in your own words, and try to execute each step of the algorithm, showing print statements for each step. This will help you understand the algorithm better and see how it works in practice.</p>
 </section>
 <section id="exercise-2">
-<h3><span class="section-number">14.9.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.9.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <p>Apply the Random Walk algorithm to the synthetic graphs that you generated in the previous notebook, and discuss the results. How does the algorithm perform on these graphs? In what cases might Random Walks be more appropriate than BFS or DFS? Pay attention to the differences in path lengths and the nature of the paths found by each algorithm.</p>
 </section>
 </section>
 <section id="submission">
-<h2><span class="section-number">14.10. </span>Submission<a class="headerlink" href="#submission" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.10. </span>Submission<a class="headerlink" href="#submission" title="Permalink to this heading">#</a></h2>
 <p>For the delivery of the practice 3, what you will be asked to do is to make a zip (name_name.zip) containing 4 notebooks: a first notebook containing the generation section, a second notebook containing BFS, a third notebook containing the DFS algorithm and a fourth notebook containing the Random Walk algorithm.</p>
 <p>At the end the zip should be like this when you unzip it:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>name_surname.zip
@@ -675,7 +680,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Graph Exploration DFS</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Graph Exploration DFS</p>
       </div>
     </a>
     <a class="right-next"
@@ -683,7 +688,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>Assignment 06/24</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>Assignment 06/24</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -703,20 +708,20 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">14.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-random-walks-work">14.2. How Do Random Walks Work?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-with-numpy">14.3. Implementation with NumPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-example">14.4. Visual Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-our-random-walk-algorithm">14.5. Testing Our Random Walk Algorithm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-random-walk-process">14.6. Visualizing the Random Walk Process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications-of-random-walks">14.7. Practical Applications of Random Walks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">14.8. Conclusion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">14.9. Exercise</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">14.9.1. Exercise 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">14.9.2. Exercise 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">16.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-random-walks-work">16.2. How Do Random Walks Work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-with-numpy">16.3. Implementation with NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-example">16.4. Visual Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-our-random-walk-algorithm">16.5. Testing Our Random Walk Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-random-walk-process">16.6. Visualizing the Random Walk Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications-of-random-walks">16.7. Practical Applications of Random Walks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">16.8. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">16.9. Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">16.9.1. Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">16.9.2. Exercise 2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">14.10. Submission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">16.10. Submission</a></li>
 </ul>
   </nav></div>
 
