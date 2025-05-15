@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>17. Graphs on real life &#8212; Matemáticas Discreta IA</title>
   
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -51,13 +51,15 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -96,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'real_cases';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="18. Assignment 06/24" href="ExamJune24.html" />
+    <link rel="next" title="18. Hitting time" href="hitting_time.html" />
     <link rel="prev" title="16. Graph Exploration Random Walks" href="graph_exploration_rw.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -107,7 +109,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -150,20 +152,12 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-  </header>
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -247,11 +241,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice 4</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">17. Graphs on real life</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hitting_time.html">18. Hitting time</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exam Solutions</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ExamJune24.html">18. Assignment 06/24</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ExamJuly24.html">19. Assignment 07/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExamJune24.html">19. Assignment 06/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExamJuly24.html">20. Assignment 07/24</a></li>
 </ul>
 
     </div>
@@ -424,7 +419,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="graphs-on-real-life">
 <h1><span class="section-number">17. </span>Graphs on real life<a class="headerlink" href="#graphs-on-real-life" title="Permalink to this heading">#</a></h1>
@@ -568,11 +563,11 @@ document.write(`
 <h2><span class="section-number">17.2. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <section id="exercise-1">
 <h3><span class="section-number">17.2.1. </span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
-<p>As we did in the previous classes, After reading the previous section, you should be able to create your first Jupyter-Notebook and write a report about all the things you have learned in this section. In order to have a good structure, we recommend you to follow exactly the same structure as in this notebook. <strong>IMPORTANT: I want a very detailed report, with all the explanations and code snippets that you have used to perform the tasks.</strong></p>
+<p>As we did in the previous classes, After reading the previous section, you should be able to create your Jupyter-Notebook and write a report about all the things you have learned in this section. In order to have a good structure, we recommend you to follow exactly the same structure as in this notebook. <strong>IMPORTANT: I want a very detailed report, with all the explanations and code snippets that you have used to perform the tasks. Just like the previous practices where we made a trace of the algorithms</strong></p>
 </section>
 <section id="exercise-2">
 <h3><span class="section-number">17.2.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
-<p>Now that you have learned how to use the Node2Vec algorithm to learn the embeddings of the nodes in a graph, I want you to apply the Node2Vec algorithm to the graph that we have generated in the previous classes (5 Graphs). Then, visualize the embeddings of the nodes in a low-dimensional space using PCA or t-SNE. What can you say about the embeddings of the nodes in the graph? Are the nodes that are close in the graph also close in the embedding space? What can you say about the quality of the embeddings? And if you could improve the quality of the embeddings, how would you do it?</p>
+<p>Now that you have learned how to use the Node2Vec algorithm to learn the embeddings of the nodes in a graph, I want you to apply the Node2Vec algorithm to the graph that we have generated in the previous classes (4 + 2 Graphs). Then, visualize the embeddings of the nodes in a low-dimensional space using PCA or t-SNE. What can you say about the embeddings of the nodes in the graph? Are the nodes that are close in the graph also close in the embedding space? What can you say about the quality of the embeddings? And if you could improve the quality of the embeddings, how would you do it?</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The aim of this exersice is to show you how to apply the Node2Vec algorithm to a graph and how to visualize the embeddings of the nodes in a low-dimensional space. But also, to play with the parameters of the Node2Vec algorithm and to see how they affect the quality of the embeddings.</p>
@@ -621,11 +616,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="ExamJune24.html"
+       href="hitting_time.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">18. </span>Assignment 06/24</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>Hitting time</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -637,7 +632,6 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -708,8 +702,8 @@ By Universidad de Alicante
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -162,11 +162,11 @@ Embeddings idea
 
 ### Exercise 1
 
-As we did in the previous classes, After reading the previous section, you should be able to create your first Jupyter-Notebook and write a report about all the things you have learned in this section. In order to have a good structure, we recommend you to follow exactly the same structure as in this notebook. **IMPORTANT: I want a very detailed report, with all the explanations and code snippets that you have used to perform the tasks.**
+As we did in the previous classes, After reading the previous section, you should be able to create your Jupyter-Notebook and write a report about all the things you have learned in this section. In order to have a good structure, we recommend you to follow exactly the same structure as in this notebook. **IMPORTANT: I want a very detailed report, with all the explanations and code snippets that you have used to perform the tasks. Just like the previous practices where we made a trace of the algorithms**
 
 ### Exercise 2
 
-Now that you have learned how to use the Node2Vec algorithm to learn the embeddings of the nodes in a graph, I want you to apply the Node2Vec algorithm to the graph that we have generated in the previous classes (5 Graphs). Then, visualize the embeddings of the nodes in a low-dimensional space using PCA or t-SNE. What can you say about the embeddings of the nodes in the graph? Are the nodes that are close in the graph also close in the embedding space? What can you say about the quality of the embeddings? And if you could improve the quality of the embeddings, how would you do it?
+Now that you have learned how to use the Node2Vec algorithm to learn the embeddings of the nodes in a graph, I want you to apply the Node2Vec algorithm to the graph that we have generated in the previous classes (4 + 2 Graphs). Then, visualize the embeddings of the nodes in a low-dimensional space using PCA or t-SNE. What can you say about the embeddings of the nodes in the graph? Are the nodes that are close in the graph also close in the embedding space? What can you say about the quality of the embeddings? And if you could improve the quality of the embeddings, how would you do it?
 
 ```{Note}
 
