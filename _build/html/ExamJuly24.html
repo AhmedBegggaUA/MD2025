@@ -7,9 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>19. Assignment 07/24 &#8212; Matemáticas Discreta IA</title>
+    <title>20. Assignment 07/24 &#8212; Matemáticas Discreta IA</title>
   
   
   
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -51,13 +51,15 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -98,7 +100,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ExamJuly24';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="18. Assignment 06/24" href="ExamJune24.html" />
+    <link rel="prev" title="19. Assignment 06/24" href="ExamJune24.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -108,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -151,20 +153,12 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-  </header>
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -248,11 +242,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice 4</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="real_cases.html">17. Graphs on real life</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hitting_time.html">18. Hitting time</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exam Solutions</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ExamJune24.html">18. Assignment 06/24</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">19. Assignment 07/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExamJune24.html">19. Assignment 06/24</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">20. Assignment 07/24</a></li>
 </ul>
 
     </div>
@@ -401,9 +396,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-groups">19.1. Counting groups</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bernouilli-trials">19.2. Bernouilli trials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-walks-on-graphs">19.3. Random Walks on Graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-groups">20.1. Counting groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bernouilli-trials">20.2. Bernouilli trials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-walks-on-graphs">20.3. Random Walks on Graphs</a></li>
 </ul>
             </nav>
         </div>
@@ -413,12 +408,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section id="assignment-07-24">
-<h1><span class="section-number">19. </span>Assignment 07/24<a class="headerlink" href="#assignment-07-24" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">20. </span>Assignment 07/24<a class="headerlink" href="#assignment-07-24" title="Permalink to this heading">#</a></h1>
 <section id="counting-groups">
-<h2><span class="section-number">19.1. </span>Counting groups<a class="headerlink" href="#counting-groups" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.1. </span>Counting groups<a class="headerlink" href="#counting-groups" title="Permalink to this heading">#</a></h2>
 <p><span style="color:#347fc9"><strong>Exercise</strong> <strong>a)</strong> How many groups of up to <span class="math notranslate nohighlight">\(3\)</span> different elements can we form with <span class="math notranslate nohighlight">\(10\)</span> individuals (including a group with no-one)?
 <strong>b)</strong> How many groups of more than <span class="math notranslate nohighlight">\(3\)</span> different elements can we form with <span class="math notranslate nohighlight">\(10\)</span> individuals?
 </span>
@@ -448,7 +443,7 @@ N_{k&gt;}=2^n - N_k = 2^{10} - 176 = 1024 - 176 = 848\;.
 </span></p>
 </section>
 <section id="bernouilli-trials">
-<h2><span class="section-number">19.2. </span>Bernouilli trials<a class="headerlink" href="#bernouilli-trials" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.2. </span>Bernouilli trials<a class="headerlink" href="#bernouilli-trials" title="Permalink to this heading">#</a></h2>
 <p><span style="color:#347fc9"><strong>Exercise</strong>
 Consider the following Bernouilli trial: <strong>Throw <span class="math notranslate nohighlight">\(2\)</span> dices simultaneously</strong> and register the outcomes as <span class="math notranslate nohighlight">\((x,y)\)</span>. Then infer <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span>, where <span class="math notranslate nohighlight">\(p + q = 1\)</span> in the following case:
 </span>
@@ -566,14 +561,14 @@ As a result, <span class="math notranslate nohighlight">\(p=\frac{6+5+3}{36}=\fr
 <br></br></p>
 </section>
 <section id="random-walks-on-graphs">
-<h2><span class="section-number">19.3. </span>Random Walks on Graphs<a class="headerlink" href="#random-walks-on-graphs" title="Permalink to this heading">#</a></h2>
-<p><span style="color:#347fc9"><strong>Exercise</strong>.  Given the <strong>escape room</strong> in the In <a class="reference internal" href="#triangle"><span class="std std-numref">Fig. 19.1</span></a> we plot a triangular mesh where the outputs (border nodes or absorbing states) are marked as <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(0\)</span> indicating respectively “success” and “failure”. What are the probabilities that random walks launched from the interior nodes  <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>, succeed?. Set the system and perform <span class="math notranslate nohighlight">\(3\)</span> iterations starting from <span class="math notranslate nohighlight">\(\mathbf{x}^0=[1\;1\;1]^T\)</span>. Explain the results.
+<h2><span class="section-number">20.3. </span>Random Walks on Graphs<a class="headerlink" href="#random-walks-on-graphs" title="Permalink to this heading">#</a></h2>
+<p><span style="color:#347fc9"><strong>Exercise</strong>.  Given the <strong>escape room</strong> in the In <a class="reference internal" href="#triangle"><span class="std std-numref">Fig. 20.1</span></a> we plot a triangular mesh where the outputs (border nodes or absorbing states) are marked as <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(0\)</span> indicating respectively “success” and “failure”. What are the probabilities that random walks launched from the interior nodes  <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>, succeed?. Set the system and perform <span class="math notranslate nohighlight">\(3\)</span> iterations starting from <span class="math notranslate nohighlight">\(\mathbf{x}^0=[1\;1\;1]^T\)</span>. Explain the results.
 </span>
 <br></br></p>
 <figure class="align-center" id="triangle">
 <a class="reference internal image-reference" href="_images/Triangle.png"><img alt="_images/Triangle.png" src="_images/Triangle.png" style="width: 450px; height: 480px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 19.1 </span><span class="caption-text">Triangular mesh with interior nodes <span class="math notranslate nohighlight">\(x_1\)</span>,<span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span>.</span><a class="headerlink" href="#triangle" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 20.1 </span><span class="caption-text">Triangular mesh with interior nodes <span class="math notranslate nohighlight">\(x_1\)</span>,<span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span>.</span><a class="headerlink" href="#triangle" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><br></br>
@@ -788,7 +783,7 @@ Then the second:
 </span>
 <br></br>
 <span style="color:#347fc9">
-The solution up to only two iterations is quite representative of the final solution since we have: <span class="math notranslate nohighlight">\(x_2\)</span> half-way between the two external nodes, <span class="math notranslate nohighlight">\(x_1\)</span> closer to the top one and <span class="math notranslate nohighlight">\(x_3\)</span> closer to the bottom one (see <a class="reference internal" href="#trianglesol"><span class="std std-numref">Fig. 19.2</span></a>).
+The solution up to only two iterations is quite representative of the final solution since we have: <span class="math notranslate nohighlight">\(x_2\)</span> half-way between the two external nodes, <span class="math notranslate nohighlight">\(x_1\)</span> closer to the top one and <span class="math notranslate nohighlight">\(x_3\)</span> closer to the bottom one (see <a class="reference internal" href="#trianglesol"><span class="std std-numref">Fig. 20.2</span></a>).
 </span>
 <br></br>
 <span style="color:#347fc9">
@@ -798,7 +793,7 @@ Finally, if we add an edge between <span class="math notranslate nohighlight">\(
 <figure class="align-center" id="trianglesol">
 <a class="reference internal image-reference" href="_images/TriangleSol.png"><img alt="_images/TriangleSol.png" src="_images/TriangleSol.png" style="width: 450px; height: 480px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 19.2 </span><span class="caption-text">Solution for Triangular mesh with interior nodes <span class="math notranslate nohighlight">\(x_1\)</span>,<span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span>.</span><a class="headerlink" href="#trianglesol" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 20.2 </span><span class="caption-text">Solution for Triangular mesh with interior nodes <span class="math notranslate nohighlight">\(x_1\)</span>,<span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span>.</span><a class="headerlink" href="#trianglesol" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -840,7 +835,7 @@ Finally, if we add an edge between <span class="math notranslate nohighlight">\(
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">18. </span>Assignment 06/24</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>Assignment 06/24</p>
       </div>
     </a>
 </div>
@@ -852,16 +847,15 @@ Finally, if we add an edge between <span class="math notranslate nohighlight">\(
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-groups">19.1. Counting groups</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bernouilli-trials">19.2. Bernouilli trials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-walks-on-graphs">19.3. Random Walks on Graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-groups">20.1. Counting groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bernouilli-trials">20.2. Bernouilli trials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-walks-on-graphs">20.3. Random Walks on Graphs</a></li>
 </ul>
   </nav></div>
 
@@ -910,8 +904,8 @@ By Universidad de Alicante
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

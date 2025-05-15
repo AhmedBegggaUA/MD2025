@@ -39,6 +39,7 @@ parts:
 - caption: Practice 4
   chapters:
   - file: real_cases
+  - file: hitting_time
 - caption: Exam Solutions 
   chapters:
   - file: ExamJune24
