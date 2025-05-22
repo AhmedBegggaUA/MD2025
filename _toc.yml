@@ -40,6 +40,7 @@ parts:
   chapters:
   - file: real_cases
   - file: hitting_time
+  - file: real_cases_dataset
 - caption: Exam Solutions 
   chapters:
   - file: ExamJune24
