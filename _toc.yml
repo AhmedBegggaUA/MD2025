@@ -45,3 +45,6 @@ parts:
   chapters:
   - file: ExamJune24
   - file: ExamJuly24
+- caption: Practice July
+  chapters:
+  - file: practica_julio
